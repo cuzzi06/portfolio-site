@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Google Sans Code Variable";
+  src: url("../fonts/GoogleSansCode-VariableFont_wght.ttf") format("truetype");
+  font-weight: 300 800; /* Esto habilita todo el rango de peso */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Google Sans Code Variable";
+  src: url("../fonts/GoogleSansCode-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 300 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --primary-color: #012e40;
+  --accent-color: #037f8c;
+  --main-gradient: linear-gradient(to bottom, #000000, #010438);
+  --text-color: #fefefe;
+  --font-base: "Google Sans Code Variable", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  background: var(--main-gradient);
+  color: var(--text-color);
+  line-height: 1.6;
+}
