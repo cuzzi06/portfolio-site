@@ -193,7 +193,31 @@
           </p>
         </div>
       </section>
-      <section id="contact"></section>
+      <section id="contact">
+        <form action="#" method="post">
+          <div class="form-field">
+            <label for="name">Full name</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="form-field">
+            <label for="mail">Email:</label>
+            <input type="email" name="mail" id="mail" required />
+          </div>
+          <div class="form-field">
+            <label for="message">Message:</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="6"
+              cols="40"
+              required
+            ></textarea>
+          </div>
+          <div class="form-field">
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </section>
     </main>
     <footer></footer>
   </body>
