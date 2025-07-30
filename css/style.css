@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Google Sans Code Variable";
   src: url("../fonts/GoogleSansCode-VariableFont_wght.ttf") format("truetype");
-  font-weight: 300 800; /* Esto habilita todo el rango de peso */
+  font-weight: 300 800;
   font-style: normal;
   font-display: swap;
 }
@@ -18,7 +18,7 @@
 :root {
   --primary-color: #e3d1b5;
   --accent-color: #037f8c;
-  --main-gradient: linear-gradient(to bottom, #000000, #010438);
+  --main-gradient: linear-gradient(to bottom, #000000, #252526);
   --text-color: #fefefe;
   --font-base: "Google Sans Code Variable", sans-serif;
 }
@@ -29,9 +29,82 @@
   padding: 0;
 }
 
+html {
+  scroll-padding-top: 5.75rem;
+}
+
 body {
   font-family: var(--font-base);
   background: var(--main-gradient);
   color: var(--text-color);
   line-height: 1.6;
+}
+
+/* HEADER & NAV */
+
+header {
+  height: 5.75rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  width: 100%;
+}
+
+.nav-links {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Accesibilidad: mostrar foco en navegación con teclado */
+.nav-links a:focus {
+  outline: 2px dashed var(--accent-color);
+  outline-offset: 4px;
+}
+
+/* Simula un cursor parpadeante al hacer hover */
+.nav-links a:hover::after {
+  content: "|";
+  position: absolute;
+  right: -7px;
+  bottom: 0.1em;
+  animation: blink 1s steps(2, start) infinite;
+  color: var(--accent-color);
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
