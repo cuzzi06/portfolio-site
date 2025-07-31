@@ -120,8 +120,10 @@ main {
 
 section {
   scroll-snap-align: start;
-  height: 100vh;
+  height: calc(100vh - 5.75rem); /* Resta la altura exacta del header */
   scroll-snap-stop: always;
+  padding: 0 5rem 2rem;
+  overflow: hidden;
 }
 
 html,
@@ -134,13 +136,11 @@ body {
 
 #home {
   position: relative;
-  height: calc(100vh - 5.75rem); /* Resta la altura exacta del header */
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-between;
   background: url("../assets/images/IMG_6512.jpg") center center / cover
     no-repeat;
-  overflow: hidden;
 }
 
 /* Capa oscura */
@@ -156,12 +156,25 @@ body {
   z-index: 0;
 }
 #home > * {
-  position: relative;
   z-index: 1;
 }
 
 /* name and role */
 
 .name-and-role {
-  align-self: flex-end;
+  position: absolute;
+  bottom: 3rem;
+  right: 5rem;
+  text-align: right;
+}
+
+.name-and-role h1 {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 1em;
+  font-weight: 500;
+}
+
+.name-and-role h2 {
+  font-size: clamp(0.75rem, 2vw, 2rem);
+  font-weight: 300;
 }
